@@ -13,29 +13,39 @@ var User = function(name, email, pw){
 
 //Create an Array called 'users' that will store all our instances of User.
 
-  //code here
+var users = [];
 
 
 //Now create and push into your users array 3 seperate instances of User using the data from above in that exact order
 
-  //code here
-
+var createNStore = function(name, email, pw, arr) {
+  var newUser = new User(name, email, pw);
+  arr.push(newUser);
+}
+createNStore('Tyler', 'tylermcginnis33@gmail.com', 'iLoveJS', users);
+createNStore('Cahlan', 'cahlan@devmounta.in', 'iLoveHashtags', users);
+createNStore('Lenny', 'lenny@theLenster.com', 'iLoveLentilSoup', users);
 console.log('Tyler\'s information is ');
 //Console.log all of Tylers information
 
-  //code here
+console.log(users[0]);
 
 console.log('Lenny\'s information is ');
 //Now console.log all of Lennys information
 
-  //code here
+console.log('Lenny\'s information is: ' + JSON.stringify(users[2]) + '.');
 
 
 //Now create another instance of User using your own information and then add that to your users array.
 
-  //code here
+createNStore('Mike', 'mjstack@fake.com', 'catBurger', users);
 
 console.log('All my users names are ');
 //Now loop through your users Array and console.log every users name. 
 
-  //code here
+var logUserNames = function(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i].name);
+  }
+};
+logUserNames(users);
